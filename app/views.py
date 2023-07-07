@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import permission_required, login_required
 from .forms import LoginForm
 from .models import Plumbus
 # Create your views here.
-@login_required
 def inicio(request):
     return render(request, 'app/inicio.html')
 
