@@ -64,6 +64,21 @@
                     <li class="nav-item">
                         <a class="nav-link pumblus auto" href="clientes.html">Clientes</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a style="float: right;" href="{% url 'logout' %}">Cerrar Sesión</a>
+                    </li>
+                    <li>
+                        <a href="#">@{{ user.username }}</a>
+                    </li>
+                        {% else %}
+                    <li>
+                        <a href="{% url 'login' %}"></a>
+                    </li>
+                    <li>
+                        <a style= "color: black;"  href="{% url 'registro' %}">Registrate</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

@@ -1,0 +1,43 @@
+{%extends 'app/base.html' %}
+{%block contenido%}
+{% load crispy_forms_tags %}
+{% load static %}
+    <!-- Archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}">
+
+    <!-- Archivos CSS personalizados -->
+    <link rel="stylesheet" href="{% static 'app/css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style-index.css' %}">
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white" id="card">Registro de Usuario</div>
+                    <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <button type="submit" class="btn btn-success btn-block">Registrar</button>
+                            <a href="crearusuariobueno.html" class="btn btn-success btn-block">Crear Usuario</a>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div style="text-align: center;">
+        <a href="loginadmin.html">
+        <button style="background-color:forestgreen;" type="submit" class="btnadmin" >Iniciar Sesión como Administrador</button>
+        </a>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <a href="index.html">
+        <button style="background-color:forestgreen;" type="submit" class="btnadmin" >Volver al inicio</button>
+        </a>
+    </div>
+{%endblock%}
