@@ -9,21 +9,20 @@ def inicio(request):
     return render(request, 'app/inicio.html')
 
 def loginsexo(request):
+    if request.method == 'POST':
+        form = LoginForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('inicio')
+    else:
+        form = LoginForm(request)
     
     contexto = {
-        "form": LoginForm()
+        "form": form
     }
-    if request.method == 'POST':
-        form = LoginForm(request.POST or None)
-        if form.is_valid():
-            name_user = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=name_user, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('inicio')
+    
     return render(request, 'app/registration/login.html', contexto)
-
 def tienda(request):
     plumbus = Plumbus.objects.all()
     contexto = {
