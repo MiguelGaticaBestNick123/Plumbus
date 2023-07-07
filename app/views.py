@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import permission_required, login_required
-from .forms import LoginForm, CustomUserCreationForm, frmCrearCuenta
+from .forms import LoginForm, CustomUserCreationForm, frmCrearCuenta, frmContacto
 from django.contrib import messages
-from .models import Plumbus, Producto, ItemCarrito
+from .models import Plumbus, Producto, ItemCarrito, Contacto
 # Create your views here.
 def inicio(request):
     return render(request, 'app/inicio.html')
@@ -89,3 +89,18 @@ def eliminar_item_carrito(request, item_id):
     item = ItemCarrito.objects.get(pk=item_id)
     item.delete()
     return redirect('ver_carrito')
+
+def contacto(request):
+    if request.method == 'POST':
+        form = frmContacto(request.POST)
+        if form.is_valid():
+            form.save()  
+            return redirect('inicio')
+    else:
+        form = frmContacto()
+    
+    contexto = {
+        'form': form
+    }
+    
+    return render(request, 'app/contacto.html', contexto)

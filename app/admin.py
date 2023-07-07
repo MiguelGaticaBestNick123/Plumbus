@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PlumbusX, Plumbus, Carrito, Pedido, Universo, Galaxia, Planeta, FormularioPago
+from .models import PlumbusX, Plumbus, Carrito, Pedido, Universo, Galaxia, Planeta, FormularioPago, Contacto, Producto, ItemCarrito
 
 class PlumbusXAdmin(admin.ModelAdmin):
     list_display = ("nombre", "precio", "largo_dingle_dop", "vibracion_floops", "grodus_inalambrico", "imagen")
