@@ -122,15 +122,38 @@ def editarprecio(request):
     }
     return render(request, 'app/admin/editarprecio.html', contexto)
 
+def guardarprecio(request):
+    if request.method == 'POST':
+        producto_id = request.POST.get('producto_id')
+        precio_nuevo = request.POST.get('precio_nuevo')
 
+        # Obtener el producto y actualizar el precio
+        producto = Plumbus.objects.get(pk=producto_id)
+        producto.precio = precio_nuevo
+        print(request.method)
+        print(request.POST)
+        print(producto_id)
+        print(precio_nuevo)
+
+        producto.save()
+        print(request.method)
+        print(request.POST)
+        print(producto_id)
+        print(precio_nuevo)
+
+
+        return redirect('editarprecio')
 
 
 
 
 
 def carrito(request):
-
-    return render(request, 'app/carrito.html')
+    plumbus = Plumbus.objects.all()
+    contexto = {
+        "data":plumbus
+    }
+    return render(request, 'app/carrito.html', contexto)
 
 
 

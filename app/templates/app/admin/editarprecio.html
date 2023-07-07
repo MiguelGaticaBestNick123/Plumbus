@@ -19,32 +19,43 @@
       <div class="card-body pb-0 bg-dark">
         <h5 class="card-title text-light">Productos a editar: <span>| PumblusPanel</span></h5>
 
-        <table class="table table-borderless">
-          <thead>
-            <tr class="text-light">
-              <th scope="col">Imagen</th>
-              <th scope="col">Producto</th>
-              <th scope="col">Precio actual</th>
-              <th scope="col">Nuevo precio</th>
-              <th scope="col">Diferencia</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for plumbus in data %}
-            <tr class="border border-3 border-secondary text-light">
-              <th scope="row"><a href="#"><img src="{{ plumbus.imagen.url }}" width="450" alt=""></a></th>
-              <td><a href="#" class="name-product fw-bold">{{ plumbus.nombre }}</a></td>
-              <td>{{ plumbus.precio }}</td>
-              <td class="fw-bold"> <input type="text" name="precio_nuevo" id="input-{{ plumbus.id }}"></td>
-              <td id="diferencia-{{ plumbus.id }}">$5828 </td>
-              <td><button type="button" onclick="calcularDiferencia({{ plumbus.id }})" class="btn btn-success" id="ajustar-{{ plumbus.id }}">Ajustar</button></td>
-            </tr>
-            {% endfor %}
-            
-          </tbody>
-        </table>
+        <form method="POST" action="{% url 'guardarprecio' %}">
+          {% csrf_token %}
+          <table class="table table-borderless">
+            <thead>
+              <tr class="text-light">
+                <th scope="col">Imagen</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio actual</th>
+                <th scope="col">Nuevo precio</th>
+                <th scope="col">Diferencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for plumbus in data %}
+              <tr class="border border-3 border-secondary text-light">
+                <th scope="row"><a href="#"><img src="{{ plumbus.imagen.url }}" width="450" alt=""></a></th>
+                <td><a href="#" class="name-product fw-bold">{{ plumbus.nombre }}</a></td>
+                <td>{{ plumbus.precio }}</td>
+                <td class="fw-bold">
+                  <input type="text" name="precio_nuevo" id="input-{{ plumbus.id }}" onchange="calcularDiferencia({{ plumbus.id }})">
+                </td>
+                <td id="diferencia-{{ plumbus.id }}"></td>
+                <td>
+                  <button type="button" onclick="calcularDiferencia({{ plumbus.id }})" class="btn btn-success">Calcular Diferencia</button>
+                  <input type="hidden" name="producto_id" value="{{ plumbus.id }}">
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+        print(request.method)
+        print(request.POST)
       </div>
     </div>
-  </div><!-- End Top Selling -->
+  </div>
 </div>
+
 {% endblock %}

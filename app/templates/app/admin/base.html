@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin panel</title>
 <!-- Favicons -->
-<link rel="icon" href="{% static 'app/imgs/plumbus_lg.png' %}">
-<link rel="apple-touch-icon" href="{% static 'app/imgs/plumbus_lg.png' %}">
+<link rel="icon" href="{% url 'adminInicio' %}">
+<link rel="apple-touch-icon" href="{% url 'adminInicio' %}">
 
 <!-- Google Fonts -->
 <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -35,9 +35,9 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index-admin.html" class="logo d-flex align-items-center">
-        <img src="imgs/plumbus_lg.png" alt="">
-        <span class="d-none d-lg-block">PumblusAdmin</span>
+      <a href="{% url "adminInicio" %}" class="logo d-flex align-items-center">
+        <img src="{% static "imgs/plumbus_lg.png"%}" alt="">
+        <span class="d-none d-lg-block">PlumbusAdmin</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -232,7 +232,7 @@
                 <hr class="dropdown-divider">
               </li>
               <li>
-                <a class="dropdown-item d-flex align-items-center" href="index.html">
+                <a class="dropdown-item d-flex align-items-center" href="{% url "inicio"%}">
                   <i class="bi bi-box-arrow-right"></i>
                   <span>Cerrar Sesión</span>
                 </a>
@@ -257,7 +257,7 @@
               </a>
               <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                  <a href="editarprecio.html">
+                  <a href="{% url 'editarprecio' %}">
                     <i class="bi bi-grid"></i><span>Editar precio</span>
                   </a>
                 </li>
@@ -270,7 +270,7 @@
               <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
                   <a href="xat-admin.html">
-                    <i class="bi bi-grid"></i><span>PumblusChat</span>
+                    <i class="bi bi-grid"></i><span>PlumbusChat</span>
                   </a>
                 </li>
               </ul>
@@ -281,7 +281,7 @@
               </a>
               <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                  <a href="index.html">
+                  <a href="{% url "inicio" %}">
                     <i class="bi bi-grid"></i><span>Ir a Pumblus</span>
                   </a>
                 </li>

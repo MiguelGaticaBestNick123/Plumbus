@@ -72,18 +72,33 @@
                         <a class="nav-link pumblus auto" href="{% url 'clientes' %}">Clientes</a>
                     </li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link pumblus auto" href="{% url 'adminInicio' %}">AdminPanel</a>
+                    </li>
                     <li>
-                        <a style="float: right;" href="{% url 'logout' %}">Cerrar Sesión</a>
+                        <p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</p>
+                    </li>
+                    <li>
+                        <a style="float: right;" href="{% url 'logout' %}"> Cerrar Sesión</a>
+                    </li>
+                    <li>
+                        <p> &nbsp &nbsp</p>
                     </li>
                     <li>
                         <a href="#">@{{ user.username }}</a>
+                    </li>
+                    <li>
+                        <p> &nbsp &nbsp &nbsp &nbsp</p>
                     </li>
                         {% else %}
                     <li>
                         <a href="{% url 'login' %}"></a>
                     </li>
                     <li>
-                        <a style= "color: black;"  href="{% url 'registro' %}">Registrate</a>
+                        <p> &nbsp &nbsp &nbsp</p>
+                    </li>
+                    <li>
+                        <a style= "color: white;"  href="{% url 'registro' %}">Registrate</a>
                     </li>
                     {% endif %}
                 </ul>
