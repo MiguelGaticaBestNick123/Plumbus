@@ -120,3 +120,9 @@ class FormularioPago(models.Model):
     def __str__(self):
         return f"Formulario de Pago creado el {self.fecha_creacion}"
 
+class Contacto(models.Model):
+        nombre = models.CharField(max_length=100, null=False)
+        correo = models.EmailField(null=False)
+        num_telefono = models.CharField(max_length=20, null=True)
+        asunto = models.CharField(max_length=80, null=False, default="n/a")
+        descripcion = models.TextField(null=False)
