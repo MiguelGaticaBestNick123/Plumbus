@@ -29,3 +29,22 @@ def tienda(request):
         "data":plumbus
     }
     return render (request, 'app/tienda.html', contexto)
+
+def registro(request):  
+    data = {
+        'form': CustomUserCreationForm()
+    }
+    if request.method == 'POST':
+        if formulario.is_valid():
+            formulario = CustomUserCreationForm(data=request.POST)
+            formulario.save()
+            User = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, User)
+            messages.success(request, "Te has registrado correctamente")
+            return redirect(to="index")
+        data["form"] = formulario
+    return render(request, 'app/registration/registro.html', data)
+
+def logout_view(request):
+    logout(request)
+    return redirect('inicio')
