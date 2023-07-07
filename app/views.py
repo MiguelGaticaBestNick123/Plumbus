@@ -3,10 +3,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import permission_required, login_required
 from .forms import LoginForm, CustomUserCreationForm, frmCrearCuenta, frmContacto
 from django.contrib import messages
-from .models import Plumbus, Producto, ItemCarrito, Contacto
+from .models import Plumbus, Producto, ItemCarrito
 # Create your views here.
 def inicio(request):
     return render(request, 'app/inicio.html')
+
+def adminInicio(request):
+    return render(request, 'app/admin/index-admin.html')
 
 def loginsexo(request):
     if request.method == 'POST':
@@ -98,8 +101,9 @@ def contacto(request):
     else:
         form = frmContacto()
     
-        'form': form
+        
     contexto = {
+        'form': form
     }
     return render(request, 'app/contacto.html', contexto)
     
@@ -109,3 +113,5 @@ def plumbusX(request):
 def clientes(request):
 
     return render(request, 'app/clientes.html')
+
+
