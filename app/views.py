@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import permission_required, login_required
 from .forms import LoginForm, CustomUserCreationForm, frmCrearCuenta
 from django.contrib import messages
-from .models import Plumbus
+from .models import Plumbus, Producto, ItemCarrito
 # Create your views here.
 def inicio(request):
     return render(request, 'app/inicio.html')
@@ -34,14 +34,16 @@ def registro(request):
     data = {
         'form': CustomUserCreationForm()
     }
+    
     if request.method == 'POST':
+        formulario = CustomUserCreationForm(request.POST)
         if formulario.is_valid():
             formulario = CustomUserCreationForm(data=request.POST)
             formulario.save()
             User = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
             login(request, User)
             messages.success(request, "Te has registrado correctamente")
-            return redirect(to="index")
+            return redirect(to="inicio")
         data["form"] = formulario
     return render(request, 'app/registration/registro.html', data)
 
@@ -62,3 +64,28 @@ def crearcuenta(request):
             return redirect(to="login")
 
     return render(request,"registration/crearcuenta.html",contexto)
+
+@login_required
+def agregar_al_carrito(request, producto_id):
+    producto = Producto.objects.get(pk=producto_id)
+    item, created = ItemCarrito.objects.get_or_create(producto=producto, usuario=request.user)
+    if not created:
+        item.cantidad += 1
+        item.save()
+    return redirect('ver_carrito')
+
+@login_required
+def ver_carrito(request):
+    items_carrito = ItemCarrito.objects.filter(usuario=request.user)
+    total = sum(item.producto.precio * item.cantidad for item in items_carrito)
+    context = {
+        'items_carrito': items_carrito,
+        'total': total
+    }
+    return render(request, 'carrito/ver_carrito.html', context)
+
+@login_required
+def eliminar_item_carrito(request, item_id):
+    item = ItemCarrito.objects.get(pk=item_id)
+    item.delete()
+    return redirect('ver_carrito')
