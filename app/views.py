@@ -26,4 +26,4 @@ def loginsexo(request):
 
 def tienda(request):
     plumbus = Plumbus.objects.all()
-    return render (request, 'app/tienda.html', plumbus)
+    return render (request, 'app/tienda.html', plumbus,{'plumbus':plumbus})
