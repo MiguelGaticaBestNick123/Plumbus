@@ -1,0 +1,90 @@
+{%extends 'app/base.html' %}
+{%block contenido%}
+{% load static %}
+
+<section class="container mt-3">
+    <div class="row">
+        <div class="col-lg-12 d-flex">
+            <section class="bg-dark rounded-3 text-center align-self-center mx-auto">
+                <h2 class="font-rickandmorty pb-3" style="padding-top: 10px;">Clientes Premium <a href="https://www.youtube.com/watch?v=zbUlXFrymhM"><img src="imgs/rey-rick-and-morty.png" class="img-fluid" width="6%" alt=""></a></h2>
+                
+            </section>
+        </div>
+    </div>
+</section>
+
+
+<main class="container mt-4 text-light">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card bg-dark">
+                <img id="img-api" class="card-img-top" alt="">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card bg-dark">
+                <div class="card-body">
+                    <div class="section">
+                        <span class="text-gray fw-bold">Nombre:</span>
+                        <p id="name-api"></p>
+                    </div>
+                    <div class="section">
+                        <span class="text-gray fw-bold">Ultima locación vista:</span>
+                        <p id="location-api"></p>
+                    </div>
+                    <div class="section">
+                        <span class="text-gray fw-bold">Primera aparición vista:</span>
+                        <p id="first-seen-api"></p>
+                    </div>
+                    <button id="siguiente-btn" class="btn btn-success mt-3">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        var characterIndex = 0;
+        var characters = [];
+
+        function cargarPersonaje() {
+            // Con esto veo si se cargaron los personajes
+            if (characters.length == 0) {
+                // Generamos un número aleatorio para el parámetro page
+                var randomPage = Math.floor(Math.random() * 34) + 1;
+                $.getJSON('https://rickandmortyapi.com/api/character?page=' + randomPage, function (data) {
+                    characters = data.results;
+                    mostrarPersonaje();
+                });
+            } else {
+                mostrarPersonaje();
+            }
+        }
+
+        function mostrarPersonaje() {
+            // Para mostrar el pj
+            var character = characters[characterIndex];
+            $("#img-api").attr("src", character.image);
+            $("#name-api").text(character.name);
+            $("#location-api").text(character.location.name);
+            $.getJSON(character.episode[0], function (data) {
+                $("#first-seen-api").text(data.name);
+            });
+        }
+        cargarPersonaje();
+
+        // Para el btn
+        $("#siguiente-btn").click(function () {
+            characterIndex++;
+            if (characterIndex >= characters.length) {
+                characterIndex = 0;
+            }
+            mostrarPersonaje();
+        });
+    });
+</script>
+{%endblock%}
