@@ -115,6 +115,12 @@ def clientes(request):
     return render(request, 'app/clientes.html')
 
 
+def editarprecio(request):
+    plumbus = Plumbus.objects.all()
+    contexto = {
+        "data": plumbus
+    }
+    return render(request, 'app/admin/editarprecio.html', contexto)
 
 
 

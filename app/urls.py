@@ -14,7 +14,6 @@ urlpatterns = [
     path('ver_carrito/', ver_carrito, name='ver_carrito'),
     path('eliminar/<int:item_id>/', eliminar_item_carrito, name='eliminar_item_carrito'),
     path('contacto/', contacto, name='contacto'),   
-    path('adminInicio',adminInicio, name='adminInicio'),
-   
+    path('editarprecio',editarprecio, name='editarprecio'),   
     path('carrito',carrito, name='carrito'),  
 ]    
