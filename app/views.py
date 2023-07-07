@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import permission_required, login_required
 from .forms import LoginForm
+from .models import Plumbus
 # Create your views here.
-@login_required
 def inicio(request):
     return render(request, 'app/inicio.html')
 
@@ -22,3 +22,10 @@ def loginsexo(request):
                 login(request, user)
                 return redirect('inicio')
     return render(request, 'app/registration/login.html', contexto)
+
+def tienda(request):
+    plumbus = Plumbus.objects.all()
+    contexto = {
+        "data":plumbus
+    }
+    return render (request, 'app/tienda.html', contexto)
