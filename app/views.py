@@ -115,3 +115,47 @@ def clientes(request):
     return render(request, 'app/clientes.html')
 
 
+
+
+
+
+
+
+
+def carrito(request):
+
+    return render(request, 'app/carrito.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

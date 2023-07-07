@@ -1,0 +1,68 @@
+{%extends 'app/base.html' %}
+{%block contenido%}
+{% load static %}
+<div class="container">
+    <div class="row mt-5">
+      <!-- Productos -->
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="imgs/plumbuszeldaarreglado.png" class="card-img-top" alt="Producto 1">
+              <div class="card-body">
+                <h5 class="card-title">Plumbus Zelda</h5>
+                <p class="card-text">Colaboracion edicion especial con The Legends of Zelda</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="imgs/plumbu-index-png.jpg" class="card-img-top" alt="Producto 2">
+              <div class="card-body">
+                <h5 class="card-title">Plumbus Tradicional</h5>
+                <p class="card-text">Plumbus ideal para todo lo que necesitas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carrito -->
+      <div class="col-md-4 mb-4">
+        <div class="card" style="background-image: url('imgs/rickandmortyportal.png'); background-size: 300px; background-position: 50%; background-repeat: no-repeat; background-color: black; ">  
+          <div class="card-body">
+            <h5 class="card-title" style="color: white;">Mi carrito</h5>
+            <ul class="list-group">
+                <br>
+                <br>
+              <li class="list-group-item d-flex justify-content-between align-items-center" style="color: white; background-color: black; ">
+                2 productos añadidos!
+                <span class="badge badge-primary badge-pill">$19.99 + $19.99 </span>
+              </li>
+              <br>
+              <br>
+              <li class="list-group-item d-flex justify-content-between align-items-center rounded" style="color: white; background-color: black; ">
+                Descuento
+                <input type="text" class="form-control" placeholder="Código" style="color: white; background-color: black; " >
+                <button class="btn btn-primary">Aplicar</button>
+              </li>
+              <br>
+              <br>
+              <li class="list-group-item d-flex justify-content-between align-items-center" style="color: white; background-color: black; ">
+                Total: $40.00
+                <span class="badge badge-primary badge-pill"></span>
+              </li>
+            </ul>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="login.html">
+              <button class="btn btn-success btn-block mt-3">Proceder al pago</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}
