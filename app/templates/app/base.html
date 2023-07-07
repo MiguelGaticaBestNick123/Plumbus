@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- Archivos CSS de Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+<!-- Archivos JS de Bootstrap (jQuery y Popper.js) -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+<!-- Archivos CSS personalizados -->
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/style-index.css">
+
+<!-- Archivos JS personalizados -->
+<script src="js/script-index.js"></script>
+    <!-- <style>
+        div {
+            border: 1;
+            border-color: red;
+            border-style: solid;
+        }
+    </style> -->
+
+</head>
+
+<body>
+    <!-- Script para pop de rick -->
+    <script src="js/script-index.js"></script>
+
+    <!-- Nav tabs -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="index.html"> <img src="{% static 'app/imgs/plumbus_lg.png'%}" width="40"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link pumblus" href="pumblus.html">PumblusX</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pumblus" href="contacto.html">Contactanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pumblus" href="tienda.html">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pumblus auto" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pumblus auto" href="clientes.html">Clientes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Se acabó el nav  -->
+    <!-- contenido principal -->
+    {% block contenido %}
+    
+
+
+
+
+    
+    {% endblock contenido %}
+
+
+
+
+
+
+        <!-- footer  -->
+        <footer class="footer bg-dark  mt-2  text-light display-10 fixed-bottom ">
+            <p class=" text-center container">Siguenos en
+                <a
+                    href="https://es-la.facebook.com/people/Rosa-Maria/pfbid02VfXMfrSvHssCpALxni7eG5g1hRDPRWGqbYEW5Nmt7hpTVHkk9rBRzpgz6CPvaF5Ll/"><i
+                        class="bi bi-facebook"></i></a>
+                <a href="https://open.spotify.com/artist/2M0kKcVuBsLFH5d12pW215"><i class="bi bi-spotify"></i> </a>
+                <a href="https://twitter.com/Brazzers"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.instagram.com/la_abuela_bellaca_36"><i class="bi bi-instagram"></i></a>
+            </p>
+            <p class="justify-content-center text-center">Powered by &copy;No fue el profe 2023</p>
+        </footer>
+
+
+</body>
+
+</html>

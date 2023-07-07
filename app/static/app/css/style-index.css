@@ -1,0 +1,214 @@
+body {
+    background-image: url(../imgs/rick-and-morty-wallpaper-portal-wallpaper-001.jpg);
+
+}
+
+.pumblus-image {
+    margin: auto;
+    right: 0%;
+    top: -150px;
+    margin-left: 10%;
+    margin-top: 35%;
+
+}
+
+.squanchy-bg {
+    z-index: -1;
+}
+
+/* .jerry{
+    width: 210%;
+    margin: auto;
+    right: 0%;
+    margin-left: -260%;
+    margin-top: 35%;
+  } */
+
+.altura-container {
+    min-height: 1080px;
+}
+
+.height-1 {
+    height: 55px;
+}
+
+@font-face {
+    font-family: 'get_schwifty';
+    src: url('../fonts/get_schwifty.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-rickandmorty {
+    font-family: 'get_schwifty', sans-serif;
+    font-size: 40px;
+    color: azure;
+}
+
+.bg-darkk {
+    background-color: #282c34;
+}
+
+.video-pumblus {
+    width: 100%;
+    height: 90%;
+}
+
+.shadoww {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+
+
+.card-index {
+    width: 100%;
+    max-width: 300px;
+}
+
+.image-card {
+    width: 140px;
+}
+
+.flechas-container img {
+    width: 350px;
+    height: 350px;
+    position: relative;
+}
+
+/* .flechas-container img:nth-child(1) {
+    top: -50px;
+    left: 150px;
+    transform: rotate(2);
+  }
+  
+  .flechas-container img:nth-child(2) {
+    top: 240px;
+    left: -12%;
+    transform: rotate(-50deg);
+  }
+  
+  .flechas-container img:nth-child(3) {
+    top: 55px;
+    right: -50px;
+    transform: rotate(240deg); */
+/* }  */
+.Flecha-CSS {
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    top: -10px;
+    right: -15%;
+    transform: rotate(230deg);
+    transform: scaleX(-1);
+}
+
+/* .pumbluslogin {
+    margin-left: 1500px;
+  } */
+
+/* .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3000px;
+    border-left-width: 3000px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+  } */
+
+
+/* .card-index {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+      top: 45%;
+  
+  }
+  .card-index {
+    position: absolute;
+    left: 60%;
+    
+  }
+  .card-index {
+    width: 100%;
+    max-width: 300px; /* ajusta este valor según tus necesidades */
+/* margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 45%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+  .image-card{
+      width: 80px;
+      height: 80px;
+  }
+  
+  .pumblus-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    right: 210%;
+    top: -100px;
+  }
+  
+  
+  
+  .pumblus-image img {
+      width: 100%;
+      height: auto;
+  }
+  .flechas-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 17%;
+      bottom: 0;
+      margin: auto;
+      width: 100px;
+      height: 100px;
+    }
+    
+    .flechas-container img {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      
+    }
+    
+    .flechas-container img:nth-child(1) {
+      top: -50px;
+      left: 150px;
+      transform: rotate(2);
+    }
+    
+    .flechas-container img:nth-child(2) {
+      top: 50px;
+      left: -320px;
+      transform: rotate(-50deg);
+    }
+    
+    .flechas-container img:nth-child(3) {
+      top: 55px;
+      right: -50px;
+      transform: rotate(240deg);
+    }
+     .flechas-container img:nth-child(4) {
+      top: -160px;
+      right: 140px;
+      transform: rotate();
+      transform: scaleX(-1);
+    }
+  
+     */
+
+
+
+/* Debo crear medias  */

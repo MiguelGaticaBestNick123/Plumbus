@@ -1,0 +1,33 @@
+.pumblusImpact{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.pumblus{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.jerry-font{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: antiquewhite;
+    font-size: 120%;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .titulo-tienda{
+    font-family: Montserrat, Arial, sans-serif;
+}
+
+@font-face {
+    font-family: 'get_schwifty';
+    src: url('../fonts/get_schwifty.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .font-rickandmorty {
+    font-family: 'get_schwifty', sans-serif;
+    font-size: 40px;
+    color: azure;
+  }
