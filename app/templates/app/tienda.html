@@ -1,0 +1,29 @@
+{%extends 'app/base.html' %}
+{%block contenido%}
+{% load static %}
+
+<section>
+    <div class="container my-5">
+    <header class="bg-dark mb-4">
+        <div class="container">
+        <h3 class="text-white pt-3 m-2 pb-3 titulo-tienda">Lleva tus pumblus!</h3>
+        </div>
+    </header>
+
+    <div class="row bg-dark ">
+        <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+        <div class="card w-100 my-2 shadow-2-strong" style="background-color: black;">
+            <img src="imgs/plumbusavatar.png" class="card-img-top" style="aspect-ratio: 1 / 1" />
+            <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-light">Avatar</h5>
+            <p class="card-text text-light">51W</p>
+            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                <a href="carrito.html" class="btn btn-success shadow-0 me-1">Añadir al carrito</a>
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+
+{%endblock%}
