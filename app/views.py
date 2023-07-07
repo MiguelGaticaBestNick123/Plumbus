@@ -89,3 +89,9 @@ def eliminar_item_carrito(request, item_id):
     item = ItemCarrito.objects.get(pk=item_id)
     item.delete()
     return redirect('ver_carrito')
+
+def plumbusX(request):
+    return render(request, 'app/plumbusX.html')
+
+def clientes(request):
+    return render(request, 'app/clientes.html')
