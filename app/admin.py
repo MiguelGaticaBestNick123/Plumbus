@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PlumbusX, Plumbus, Carrito, Pedido, Universo, Galaxia, Planeta, FormularioPago, Producto, ItemCarrito
+from .models import PlumbusX, Plumbus, Carrito, Pedido, Universo, Galaxia, Planeta, FormularioPago
 
 class PlumbusXAdmin(admin.ModelAdmin):
     list_display = ("nombre", "precio", "largo_dingle_dop", "vibracion_floops", "grodus_inalambrico", "imagen")
@@ -54,6 +54,11 @@ class FormularioPagoAdmin(admin.ModelAdmin):
 
     class Meta:
         model = FormularioPago
+        
+class ContactoAdmin(admin.ModelAdmin):
+    list_display = ("nombre", "correo", "num_telefono", "asunto","descripcion")
+    class Meta:
+        model = Contacto
 
 class ProductoAdmin(admin.ModelAdmin):
     list_display = ("nombre", "precio")
@@ -74,5 +79,6 @@ admin.site.register(Universo, UniversoAdmin)
 admin.site.register(Galaxia, GalaxiaAdmin)
 admin.site.register(Planeta, PlanetaAdmin)
 admin.site.register(FormularioPago, FormularioPagoAdmin)
+admin.site.register(Contacto, ContactoAdmin)
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(ItemCarrito, ItemCarritoAdmin)
