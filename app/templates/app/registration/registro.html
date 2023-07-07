@@ -9,19 +9,18 @@
     <!-- Archivos CSS personalizados -->
     <link rel="stylesheet" href="{% static 'app/css/estilo.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/style-index.css' %}">
-    <br>
-    <br>
+
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header bg-success text-white" id="card">Inicio de Sesión</div>
+                    <div class="card-header bg-success text-white" id="card">Registro de Usuario</div>
                     <form action="" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             {{ form | crispy }}
-                            | <input type="submit" value="Iniciar Sesión" class="btn btn-success float-right"> |
-                            <a href="{% url 'inicio' %}">Ir al Inicio</a> 
-                            
+                            | <input type="submit" value="Registrarse" class="btn btn-success float-right"> |
+                            <a href="{% url 'inicio' %}">Ir al Inicio</a> |
+                            <a href="{% url 'login' %}">Iniciar Sesión</a> 
                         </form>
                         
                     </div>
@@ -29,6 +28,7 @@
             </div>
         </div>
     </div>
-    
+    <br>
 
+    
 {%endblock%}
