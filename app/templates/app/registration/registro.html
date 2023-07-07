@@ -18,8 +18,9 @@
                     <form action="" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             {{ form | crispy }}
-                            <button type="submit" class="btn btn-success btn-block">Registrar</button>
-                            <a href="crearusuariobueno.html" class="btn btn-success btn-block">Crear Usuario</a>
+                            | <input type="submit" value="Registrarse" class="btn btn-success float-right"> |
+                            <a href="{% url 'inicio' %}">Ir al Inicio</a> |
+                            <a href="{% url 'login' %}">Iniciar Sesión</a> 
                         </form>
                         
                     </div>
